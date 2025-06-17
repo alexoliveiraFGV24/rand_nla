@@ -12,5 +12,12 @@ for n in ns:
             if i != j:
                 prod = np.inner(A[:, i], A[:, j])
                 prods.append(prod)
+
+compare = []
+for _ in range(1000):
+    x = np.random.random(0, m)[0]
+    compare.append(x)
+    
     
 plot_dist(prods, "Distribuição do produto interno das colunas de matrizes gaussianas")
+plot_dist(compare)

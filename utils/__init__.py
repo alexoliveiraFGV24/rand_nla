@@ -7,9 +7,12 @@ def norm2(x):
 def gaussian_matrix(m:int, n:int):
     return np.random.normal(0, 1, (m,n))
 
-def plot_dist(data, title="", bins=100):
-    plt.hist(data, bins=bins)
+def plot_dist(datas:list, legends:list, density=True, title="", bins=100):
+    n = len(datas)
+    for i in range(n):
+        plt.hist(datas[i], bins=bins, label=legends[i], density=density)
     plt.title(title)
+    plt.legend()
     plt.show()
     
 def maxes(k=1000, m=100, n=300):
